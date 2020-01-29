@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+from pandas.plotting import register_matplotlib_converters
+register_matplotlib_converters()
+
+data = pd.read_csv('/a2_MANCHAS.csv',
+                   index_col= ['Ano'], 
+                   parse_dates= ['Ano'])
+
+fig, ax = plt.subplots(figsize = (14, 7))
+
+ax.plot(data.head(10).index.values, 
+        data.head(10)['manchas'])
+
+plt.xticks(data.head(10).index.values)
+
+plt.show()
+
+
+
+
+
+
