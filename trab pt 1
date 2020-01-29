@@ -1,0 +1,27 @@
+#LEMBRA DE COMENTAR NESSA MERDA PRA NÃO ESQUECER DEPOIS, SEU ANIMAL
+
+import matplotlib.pyplot as plt 
+import pandas as pd
+
+from pandas.plotting import register_matplotlib_converters
+register_matplotlib_converters()
+
+data = pd.read_csv('/a2_MANCHAS.csv',
+                   parse_dates = ['Ano'],
+                   index_col = ['Ano'])
+
+fig, ax = plt.subplots(figsize = (14, 7))
+
+ax.plot(data.head(30).index.values,
+        data.head(30)['manchas'],
+        color = 'purple')
+
+ax.set(xlabel= "Data",
+       ylabel= "Manchas",
+       title= "MANCHAS")
+
+ax.grid()
+plt.xticks(data.head(30).index.values, rotation = 'vertical')
+
+plt.show()
+
