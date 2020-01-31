@@ -1,5 +1,3 @@
-#LEMBRA DE COMENTAR NESSA MERDA PRA NÃO ESQUECER DEPOIS, SEU ANIMAL
-
 import matplotlib.pyplot as plt 
 import pandas as pd
 
