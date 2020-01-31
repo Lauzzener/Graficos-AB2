@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-data = pd.read_csv('/a2_MANCHAS.csv')
+data = pd.read_csv('a2_MANCHAS.csv')
 
-fig, ax = plt.subplots(figsize = (14, 7))
+fig, ax = plt.subplots(figsize = (10, 5))
 
 ax.boxplot(data['manchas'])
 
