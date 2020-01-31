@@ -4,11 +4,11 @@ import pandas as pd
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
-data = pd.read_csv('/a2_MANCHAS.csv',
+data = pd.read_csv('a2_MANCHAS.csv',
                    parse_dates = ['Ano'],
                    index_col = ['Ano'])
 
-fig, ax = plt.subplots(figsize = (14, 7))
+fig, ax = plt.subplots(figsize = (14, 5))
 
 ax.plot(data.head(30).index.values,
         data.head(30)['manchas'],
@@ -16,10 +16,9 @@ ax.plot(data.head(30).index.values,
 
 ax.set(xlabel= "Data",
        ylabel= "Manchas",
-       title= "MANCHAS")
+       title= "Número de manchas solares de Wolfer")
 
 ax.grid()
 plt.xticks(data.head(30).index.values, rotation = 'vertical')
 
 plt.show()
-
